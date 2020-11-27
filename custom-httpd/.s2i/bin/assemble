@@ -9,12 +9,12 @@ echo "---> Enabling s2i support in httpd24 image"
 config_s2i
 
 echo "---> Installing application source"
-cp -af /tmp/src/*.html ./
+cp -Rf /tmp/src/*.html ./
 
 echo "---> Creating info page"
 DATE=`date "+%Y-%m-%d @ %I:%M %p"`
 echo "Page built on $DATE" >> ./info.html
-echo "How are you" >> ./info.html
+echo "Proudly served by Apached HTTP server version $HTTPD_VERSION" >> ./info.html
 
 # Fix source directory permissions
 fix-permissions ./
