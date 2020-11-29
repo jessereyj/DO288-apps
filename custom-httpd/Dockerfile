@@ -1,4 +1,4 @@
-FROM registry.acess.redhat.com/rhscl/httpd-24-rhel7
+FROM registry.access.redhat.com/rhscl/httpd-24-rhel7
 
 #MAINTAINER "Jesserey Joseph" "jesserey.joseph@ibm.com"
 
