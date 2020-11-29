@@ -5,7 +5,7 @@ FROM rhscl/httpd-24-rhel7
 #LABEL Component="httpd" Name="custom-httpd" Version="1" Relesae="1.0"
 #LABEL io.k8s.description="Custom Httpd" io.k8s.display-name="custom-httpd" io.openshift.s2i.scripts-url="image:///usr/libexec/s2i" io.openshift.expose-services="8080:http"
 
-LABEL io.k8s.display-name="httpd-24-rhel7" io.openshift.s2i.build.image="httpd-24-rhel7"
+LABEL io.k8s.display-name="s2i-httpd-24-rhel7" io.openshift.s2i.build.image="httpd-24-rhel7"
 
 USER 0
 #RUN mkdir -p /var/www/html
