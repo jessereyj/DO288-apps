@@ -11,7 +11,7 @@ USER 0
 #RUN mkdir -p /var/www/html
 ADD index.html /tmp/src/
 COPY .s2i/bin/ /usr/libexec/s2i
-RUN chown -R 1001:0 /tmp/src && chown +x /usr/libexec/s2i/assemble /usr/libexec/s2i/run/ /usr/libexec/usage
+RUN chown -R 1001:0 /tmp/src && chmod +x /usr/libexec/s2i/assemble /usr/libexec/s2i/run /usr/libexec/s2i/usage
 
 #ENV APP_DIRS /tmp/src/ /var/www/ 
 #RUN chown -R 1001:1001 $APP_DIRS  && chgrp -R 0 $APP_DIRS && chmod -R g=u $APP_DIRS && chmod +x /usr/libexec/s2i/assemble /usr/libexec/s2i/run /usr/libexec/s2i/usage
