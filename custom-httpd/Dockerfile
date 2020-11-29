@@ -1,4 +1,4 @@
-FROM rhscl/httpd-24-rhel7
+FROM registry.acess.redhat.com/rhscl/httpd-24-rhel7
 
 #MAINTAINER "Jesserey Joseph" "jesserey.joseph@ibm.com"
 
@@ -10,8 +10,8 @@ LABEL io.k8s.display-name="s2i-httpd-24-rhel7" io.openshift.s2i.build.image="htt
 USER 0
 #RUN mkdir -p /var/www/html
 ADD index.html /tmp/src/
-COPY .s2i/bin/ /usr/libexec/s2i
-RUN chown -R 1001:0 /tmp/src && chmod +x /usr/libexec/s2i/assemble /usr/libexec/s2i/run /usr/libexec/s2i/usage
+#COPY .s2i/bin/ /usr/libexec/s2i
+RUN chown -R 1001:0 /tmp/src 
 
 #ENV APP_DIRS /tmp/src/ /var/www/ 
 #RUN chown -R 1001:1001 $APP_DIRS  && chgrp -R 0 $APP_DIRS && chmod -R g=u $APP_DIRS && chmod +x /usr/libexec/s2i/assemble /usr/libexec/s2i/run /usr/libexec/s2i/usage
